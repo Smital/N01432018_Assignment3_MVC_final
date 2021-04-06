@@ -1,0 +1,33 @@
+﻿@model IEnumerable<N01432018_Assignment3_MVC.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>This page will view the information about Teachers</h2>
+
+<form action="/Teacher/List" method="get" name="form1">
+    <table cellpadding="2" cellspacing="2">
+        <tr>
+            <td><label for="Teachername">Teacher Name : </label></td>
+            <td><input type="text" name="SearchKey" /></td>
+        </tr>
+        <tr>
+            <td><label for="Salary">Salary: </label></td>
+            <td><input type="text" name="Number" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Search" /></td>
+        </tr>
+
+    </table>
+</form><br />
+
+
+@foreach(var teacher in Model) {
+
+    <div>@teacher.TeacherId <a href="/Teacher/Show/@teacher.TeacherId">@teacher.TeacherFname @teacher.TeacherLname</a></div>
+
+
+
+}
+
